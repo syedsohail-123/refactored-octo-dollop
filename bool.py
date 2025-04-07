@@ -1,3 +1,4 @@
 data = "False"
 data = bool(data)
-print(data, type(data))
+print(data) 
+print(type(data))
