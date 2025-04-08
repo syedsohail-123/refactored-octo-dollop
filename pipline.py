@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                
+               git 'https://github.com/syedsohail-123/syedsohailahmedpython-repo.git' 
             }
         }
         stage('Build') {
