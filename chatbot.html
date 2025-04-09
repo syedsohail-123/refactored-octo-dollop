@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Python Q&A Chatbox</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
+    .chatbox {
+      width: 100%;
+      max-width: 700px;
+      margin: auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .message {
+      margin-bottom: 20px;
+    }
+    .question {
+      color: #1a73e8;
+      font-weight: bold;
+    }
+    .answer {
+      margin-top: 5px;
+      margin-left: 20px;
+    }
+    pre {
+      background: #f0f0f0;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="chatbox" id="chatbox">
+    <!-- Q&A will be rendered here -->
+  </div>
+
+  <script>
+    const qaList = [
+      {
+        question: "1. What are Python’s key features?",
+        answer: `Key features include easy syntax, dynamic typing, and built-in data structures.`,
+        code: `x = 10         # Integer
+x = "Python"   # Now a string
+print(x)       # Output: Python`
+      },
+      {
+        question: "2. What is the difference between a list and a tuple?",
+        answer: `Lists are mutable, whereas tuples are immutable.`,
+        code: `# List (mutable)
+my_list = [1, 2, 3]
+my_list[0] = 10
+print(my_list)  # Output: [10, 2, 3]
+
+# Tuple (immutable)
+my_tuple = (1, 2, 3)
+# my_tuple[0] = 10  # This will raise a TypeError`
+      },
+      {
+        question: "3. What are *args and **kwargs?",
+        answer: "`*args` allows passing non-keyword arguments. `**kwargs` allows keyword arguments.",
+        code: `def demo_function(*args, **kwargs):
+    print("args:", args)
+    print("kwargs:", kwargs)
+
+demo_function(1, 2, 3, name="Alice", age=30)`
+      },
+      {
+        question: "4. What is a lambda function?",
+        answer: "A lambda function is an anonymous function defined with `lambda` keyword.",
+        code: `add = lambda x, y: x + y
+print(add(3, 5))  # Output: 8`
+      },
+      {
+        question: "5. How do you handle exceptions in Python?",
+        answer: "Use try, except, and finally to handle exceptions.",
+        code: `try:
+    result = 10 / 0
+except ZeroDivisionError:
+    print("You can't divide by zero!")
+finally:
+    print("Execution finished.")`
+      }
+    ];
+
+    const chatbox = document.getElementById('chatbox');
+
+    qaList.forEach(qa => {
+      const message = document.createElement('div');
+      message.classList.add('message');
+
+      message.innerHTML = `
+        <div class="question">${qa.question}</div>
+        <div class="answer">${qa.answer}</div>
+        <pre><code>${qa.code}</code></pre>
+      `;
+
+      chatbox.appendChild(message);
+    });
+  </script>
+</body>
+</html>
