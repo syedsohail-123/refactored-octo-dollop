@@ -1,4 +1,9 @@
-def table(n):
-    for i in range(1,11):
-        print(f"{n} x {i} = {n * i}")
-table(24)
+data = "False"
+data = bool(data)
+print(data, type(data))
+class human:
+    def __init__(self):
+        self.name = "vishwajeet kumar"
+        self.age = 30
+data = human()
+print(data.name, data.age)
