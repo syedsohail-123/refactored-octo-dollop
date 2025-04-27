@@ -1,7 +1,3 @@
-data = "False"
-data = bool(data)
-print(data, type(data))
-data = "0"
-data = bool(data)       
-print(data, type(data))
-
+first_name = "vishwajeet"
+last_name = "kumar"
+print(f"{first_name} {last_name} {len(first_name)}"
