@@ -1,3 +1,4 @@
-first_name = "vishwajeet"
-last_name = "kumar"
-print(f"{first_name} {last_name} {len(first_name)}")
+def table(n):
+    for i in range(1,11):
+        print(f"{n} x {i} = {n * i}")
+table(24)
